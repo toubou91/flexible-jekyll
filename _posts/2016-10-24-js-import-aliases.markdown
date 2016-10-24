@@ -43,13 +43,13 @@ That is, then he could test both components in one page/render, without receivin
 <BarChart
 	width=800
 	height=600
-	//rest of properties
+	...
 />
 
 <RCBarChart
 	width=800
 	height=600
-	//rest of properties
+	...
 />
 ```
 
