@@ -45,7 +45,6 @@ That is, then he could test both components in one page/render, without receivin
 	height=600
 	...
 />
-
 <RCBarChart
 	width=800
 	height=600
