@@ -40,16 +40,18 @@ import { BarChart as RCBarChart, Bar, Brush, ReferenceLine, XAxis, YAxis, Cartes
  
 That is, then he could test both components in one page/render, without receiving any complaints:
 
-    <BarChart
-	    width=800
-	    height=600
-	    ...
-    />
-    <RCBarChart
-	    width=800
-	    height=600
-	    ...
-    />
+```html
+<BarChart
+	width=800
+	height=600
+	...
+/>
+<RCBarChart
+	width=800
+	height=600
+	...
+/>
+```
 
 <h4>Closing Quote</h4>
 <em>Even the easiest things in life reveal you some kind of magic when you discover them alone.</em>
