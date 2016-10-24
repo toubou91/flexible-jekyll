@@ -4,9 +4,6 @@ title:  "Import same-named classes from different libraries"
 date:   2016-10-24 20:53 +0200
 comments: true
 categories: [javascript, reactjs]
-image: "./react.png"
-thumbnail: "./react.png"
-
 ---
 <h1>The problem</h1>
 Import same named classes from differenet modules
@@ -42,6 +39,7 @@ import { BarChart as RCBarChart, Bar, Brush, ReferenceLine, XAxis, YAxis, Cartes
 ```
  
 That is, then he could test both components in one page/render, without receiving any complaints:
+
 ```html
 <BarChart
 	width=800
