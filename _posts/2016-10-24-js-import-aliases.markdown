@@ -39,12 +39,13 @@ import { BarChart as RCBarChart, Bar, Brush, ReferenceLine, XAxis, YAxis, Cartes
 ```
  
 That is, then he could test both components in one page/render, without receiving any complaints:
-```javascript
+```html
 <BarChart
 	width=800
 	height=600
 	//rest of properties
 />
+
 <RCBarChart
 	width=800
 	height=600
