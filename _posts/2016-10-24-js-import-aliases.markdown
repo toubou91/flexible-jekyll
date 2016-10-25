@@ -20,11 +20,11 @@ import { BarChart, Bar, Brush, ReferenceLine, XAxis, YAxis, CartesianGrid, Toolt
 
 Apparently, the intention was to render both of those, like:
 
-```javascript
+```html
 <BarChart
-	width=800
-	height=600
-	//rest of properties
+    width=800
+    height=600
+    ...
 />
 ```
 
@@ -42,14 +42,14 @@ That is, then he could test both components in one page/render, without receivin
 
 ```html
 <BarChart
-	width=800
-	height=600
-	...
+    width=800
+    height=600
+    ...
 />
 <RCBarChart
-	width=800
-	height=600
-	...
+    width=800
+    height=600
+    ...
 />
 ```
 
