@@ -54,4 +54,4 @@ That is, then he could test both components in one page/render, without receivin
 ```
 
 <h4>Closing Quote</h4>
-<em>Even the easiest things in life reveal you some kind of magic when you discover them alone.</em>
+> Even the easiest things in life reveal you some kind of magic when you discover them alone.
