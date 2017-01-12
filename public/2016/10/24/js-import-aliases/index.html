@@ -77,12 +77,12 @@
 
 <p>Apparently, the intention was to render both of those, like:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">BarChart</span>
-	<span class="nx">width</span><span class="o">=</span><span class="mi">800</span>
-	<span class="nx">height</span><span class="o">=</span><span class="mi">600</span>
-	<span class="c1">//rest of properties</span>
-<span class="sr">/</span><span class="err">&gt;
-</span></code></pre>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;BarChart</span>
+    <span class="na">width=</span><span class="s">800</span>
+    <span class="na">height=</span><span class="s">600</span>
+    <span class="err">...</span>
+<span class="nt">/&gt;</span>
+</code></pre>
 </div>
 
 <p>But what he didn’t think about was that the compiler wouldn’t be able to identify what kind of <code>BarChart</code> he was referring to, every time: the one from <code>recharts</code> or the other from <react-svg-chart>?!</react-svg-chart></p>
@@ -96,22 +96,24 @@
 </div>
 
 <p>That is, then he could test both components in one page/render, without receiving any complaints:</p>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">BarChart</span>
-	<span class="nx">width</span><span class="o">=</span><span class="mi">800</span>
-	<span class="nx">height</span><span class="o">=</span><span class="mi">600</span>
-	<span class="c1">//rest of properties</span>
-<span class="sr">/</span><span class="err">&gt;
-</span>
-<span class="o">&lt;</span><span class="nx">RCBarChart</span>
-	<span class="nx">width</span><span class="o">=</span><span class="mi">800</span>
-	<span class="nx">height</span><span class="o">=</span><span class="mi">600</span>
-	<span class="c1">//rest of properties</span>
-<span class="sr">/</span><span class="err">&gt;
-</span></code></pre>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;BarChart</span>
+    <span class="na">width=</span><span class="s">800</span>
+    <span class="na">height=</span><span class="s">600</span>
+    <span class="err">...</span>
+<span class="nt">/&gt;</span>
+<span class="nt">&lt;RCBarChart</span>
+    <span class="na">width=</span><span class="s">800</span>
+    <span class="na">height=</span><span class="s">600</span>
+    <span class="err">...</span>
+<span class="nt">/&gt;</span>
+</code></pre>
 </div>
 
 <h4>Closing Quote</h4>
-<p><em>Even the easiest things in life reveal you some kind of magic when you discover them alone.</em></p>
+<blockquote>
+  <p>Even the easiest things in life reveal you some kind of magic when you discover them alone.</p>
+</blockquote>
 
   </div>
 

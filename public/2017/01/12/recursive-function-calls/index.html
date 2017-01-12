@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Happy New 2016!</title>
+  <title>How to call a JavaScript function recursively</title>
   <meta name="description" content="">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/2016/01/05/happy-new-2016/">
+  <link rel="canonical" href="http://localhost:4000/2017/01/12/recursive-function-calls/">
   <link rel="alternate" type="application/rss+xml" title="Thodoris Bais around Software and Life" href="http://localhost:4000/feed.xml">
 </head>
 
@@ -57,13 +57,49 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Happy New 2016!</h1>
-    <p class="post-meta"><time datetime="2016-01-05T22:21:00+01:00" itemprop="datePublished">Jan 5, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">toubou91</span></span></p>
+    <h1 class="post-title" itemprop="name headline">How to call a JavaScript function recursively</h1>
+    <p class="post-meta"><time datetime="2017-01-12T20:00:00+01:00" itemprop="datePublished">Jan 12, 2017</time></p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <div dir="ltr" style="text-align:left;">Hey, 2015 is over.<br /><br />Did you notice that or you just started a new year just like it was an ordinary day?<br /><br />Truth is: I was planning a few additional posts for 2015, but I found myself in the need of some rest from the ordinary things I like doing, after having had a hard time combining my daily job duties with my thesis implementation (yes, <a href="https://www.youtube.com/watch?v=PBNsyU3e1xQ" target="_blank">I finally graduated</a>), which means that I lately got used to reading about front-end stuff.<br /><br />Second truth is, I don't know anything about it, as javascript evolves very fast. Keywords here for 2016, are:<br /><ul style="text-align:left;"><li><a href="https://nodejs.org/en/" target="_blank">Node.js</a></li><li><a href="http://yeoman.io/" target="_blank">Yeoman</a></li><li><a href="https://www.npmjs.com/" target="_blank">npm</a></li><li><a href="http://gulpjs.com/" target="_blank">Gulp</a></li><li><a href="https://facebook.github.io/react/" target="_blank">React.js</a></li><li><a href="http://bower.io/" target="_blank">Bower</a></li></ul><div>So, in continuation of <a href="http://www.webcodegeeks.com/author/thodoris-bais/" target="_blank">my Angular.js examples</a>, I lately got myself exposed to some jQuery stuff, through the <a href="https://github.com/toubou91/percircle" target="_blank">percircle</a> project, but I there noticed I also need CSS for many reasons.</div><div><br /></div><div>Generally, everyone says "basic skills in js and css are a must, no matter of his/her duties", but one can hardly ever understand his lack of knowledge, without exposure to real world problems. Thing is, that both of the above are just baby steps on the front-e, so, <b>Santa</b>, please make my days last 26 hours, in order to extend my knowledge on front-end technologies.</div><div><br /></div><div>In addition, please make sure the following ones will be accomplished on 2016:</div><div><ul style="text-align:left;"><li>deeper knowledge on Java Core</li><li>better time management and problem approach </li></ul><div>They say<b> "better problem approach comes with experience". I believe </b>that <span style="color:#cc0000;font-weight:bold;">better time management makes experience</span><span style="font-weight:bold;">.</span></div></div><div><br /></div><div><ul style="text-align:left;"><li><span style="color:#8e7cc3;"><b>REDUCE POVERTY IN THE WORLD</b></span></li></ul><div><i>Ok, things seem to get worse day by day for us, here in Greece, but we 're not the only ones that are facing poverty (and I'm not talking for the disability to buy an iPhone). Let's try and help poor people on streets, either by money or by food. For us, the cost would be like a coffee with a friend, but for them, sth like 2€ is many times the one and only daily meal.</i></div></div><div><i><br /></i></div><div class="separator" style="clear:both;text-align:center;"><a href="http://i.huffpost.com/gen/1549747/images/o-POVERTY-facebook.jpg" style="margin-left:1em;margin-right:1em;"><img border="0" src="http://i.huffpost.com/gen/1549747/images/o-POVERTY-facebook.jpg" height="200" width="400" /></a></div><div><i><br /></i></div><div><i><br /></i></div><div><i>I was about to close this post here, but I found the above image, while only searching for the "poverty" term, so, I couldn't leave unemployment out of y wishes, according to my country. It's a shame for this country watching so many guys leaving it and going abroad for a job, for a better job, for a better living, for a better future for themselves and their families. </i></div><div><i><br /></i></div><div><i><b>Hey Santa, also bring some employment and better working conditions to your sunny Greece, I'm sure <span style="background-color:white;">you 're the only one who can do it</span>.</b></i></div><div><i><br /></i></div><div><i>Happy New 2016 :)</i></div></div>
+    <h1>Situation</h1>
+<p>So I have developed <a href="https://www.npmjs.com/package/math.js">math.js</a>, a small npm-package (still WIP), which contains very simple functions, in a format like below:</p>
 
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">greatestCommonDivisor</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">remainder</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">%</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">remainder</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">greatestCommonDivisor</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="nx">remainder</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Running the tests after having added the fore-mentioned function, wasn’t as fun as I thought, though:
+<img src="http://localhost:4000/assets/failure.png" alt="Tests failed" class="center-image" /></p>
+
+<h1>Solution</h1>
+<p>Hopefully, js already provides a feature with the help of which we can work around situations where we need to reference the function inside itself, so, <b>we need to somehow provide a naming to the function itself</b>. This is called a <b><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name">named function expression</a></b>:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code> <span class="nx">greatestCommonDivisor</span><span class="err">:</span> <span class="kd">function</span> <span class="nx">gcd</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">remainder</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">%</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">remainder</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">y</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">gcd</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="nx">remainder</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Tadaaam! Tests turned green again, after this slight change.
+Let’s commit!</p>
+
+<h4>Closing Quote</h4>
+<blockquote>
+  <p>You already know where you’re good at, but how sure could you be about things you never tried before?</p>
+</blockquote>
 
   </div>
 
@@ -79,7 +115,7 @@
 var disqus_config = function () {
     this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-	var disqus_url = "http://thodorisbais.com/2016/01/05/happy-new-2016/";
+	var disqus_url = "http://thodorisbais.com/2017/01/12/recursive-function-calls/";
 };
 */
 (function() { // DON'T EDIT BELOW THIS LINE
