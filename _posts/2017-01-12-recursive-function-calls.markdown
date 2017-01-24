@@ -2,7 +2,7 @@
 layout: post
 title:  "How to call a JavaScript function recursively"
 date:   2017-01-12 21:00 +0200
-comments: tilrue
+comments: true
 categories: [til, javascript]
 ---
 <h1>Situation</h1>

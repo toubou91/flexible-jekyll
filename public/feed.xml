@@ -6,9 +6,42 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 12 Jan 2017 20:53:13 +0100</pubDate>
-    <lastBuildDate>Thu, 12 Jan 2017 20:53:13 +0100</lastBuildDate>
-    <generator>Jekyll v3.3.0</generator>
+    <pubDate>Tue, 24 Jan 2017 20:59:53 +0100</pubDate>
+    <lastBuildDate>Tue, 24 Jan 2017 20:59:53 +0100</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>GitHub bug</title>
+        <description>&lt;h1&gt;Situation&lt;/h1&gt;
+&lt;p&gt;Today, on a Windows machine, I was about to create a new issue in GitHub.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;We have a saying in Greece: “1 picture = 1000 words”, so, I always try to provide visual representation of such technical situations, when possible.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In today’s case, it was enough if I just provided a screenshot, ‘cause it perfectly depicted the erroneous situation. So, being lazy as always, I just use the preinstalled &lt;a href=&quot;http://www.digitalcitizen.life/how-use-snipping-tool&quot;&gt;Snipping Tool&lt;/a&gt; from Windows to work around capturing a snapshot of a part of my screen and copied the snapshot to clipboard, using the “copy” button that Snipping Tool provides:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/snip_copy.png&quot; alt=&quot;Copy button&quot; class=&quot;center-image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Following step is obvious: navigating to the github issue I am about to open/create and &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+V&lt;/code&gt;.
+I then thought I had some remnants of a previous paste, which was wrong in my opinion, so I had to first delete the pasted from clipboard snapshot and hit again &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+V&lt;/code&gt;. Hitting “Delete” is an extra button and I fore-mentioned I’m lazy, so I just selected all the contents of the text area (&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+A&lt;/code&gt;) and instantly tried to replace them with my clipboard (&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+V&lt;/code&gt;):
+&lt;img src=&quot;https://i.gyazo.com/8e547b492eab5767261f42956606fdac.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Boom! A cat is killed! Previously added contents are added on top of the latest pasted content.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Too minor, but I thought I’d share, in case GH support ends up here sometime.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4&gt;Closing Quote&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Motivation starts when you start working on your long-term goals.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Tue, 24 Jan 2017 20:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2017/01/24/github-bug/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/24/github-bug/</guid>
+        
+        
+        <category>social</category>
+        
+      </item>
     
       <item>
         <title>How to call a JavaScript function recursively</title>
@@ -369,23 +402,6 @@ An easy task for the majority of front-end and full-stack devs, in general, but 
         <category>web-services</category>
         
         <category>xml</category>
-        
-      </item>
-    
-      <item>
-        <title>How to change the default installation directory in Windows</title>
-        <description>&lt;div dir=&quot;ltr&quot; style=&quot;text-align:left;&quot;&gt;&lt;br /&gt;&lt;h2&gt;1. The problem&lt;/h2&gt;I've got a partitioned ultrabook, where OS is installed in the &lt;b&gt;C:\&lt;/b&gt; drive. That is, my &lt;b&gt;C:\&lt;/b&gt; drive has a small amount of available GBs, so, each time I want to install a new software, I have to manually change the setup wizard's default directory ( &lt;b&gt;C:\Program Files\&lt;/b&gt; ) to my &lt;b&gt;D:\&lt;/b&gt; drive.  &lt;br /&gt;&lt;h2&gt;2. The solution&lt;/h2&gt;In order to change the default installation directory for a Windows machine, we have to modify its &lt;a href=&quot;http://windows.microsoft.com/en-us/windows-vista/what-is-the-registry&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;registry&lt;/a&gt;:  &lt;br /&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Start&lt;/b&gt; -&amp;gt; &lt;b&gt;Run&lt;/b&gt;, type &lt;pre class=&quot;brush:bash&quot;&gt; %systemroot%\syswow64\regedit&lt;/pre&gt; and hit &lt;b&gt;OK&lt;/b&gt;. &lt;br /&gt;&lt;br /&gt;&lt;div class=&quot;separator&quot; style=&quot;clear:both;text-align:center;&quot;&gt;&lt;a href=&quot;https://thodorisbais.files.wordpress.com/2015/04/e7bef-1.png&quot; style=&quot;margin-left:1em;margin-right:1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://thodorisbais.files.wordpress.com/2015/04/e7bef-1.png?w=300&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt; Navigate to &lt;code&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion&lt;/code&gt; and change the highlighted variables (right-click -&amp;gt; &lt;b&gt;Modify&lt;/b&gt;) with the desired ones:  &lt;/li&gt;&lt;/ul&gt;&lt;div class=&quot;separator&quot; style=&quot;clear:both;text-align:center;&quot;&gt;&lt;a href=&quot;https://thodorisbais.files.wordpress.com/2015/04/e76da-3.png&quot; style=&quot;margin-left:1em;margin-right:1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://thodorisbais.files.wordpress.com/2015/04/e76da-3.png&quot; height=&quot;72&quot; width=&quot;400&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br /&gt;&lt;/div&gt;Enjoy! &lt;/div&gt;
-</description>
-        <pubDate>Sat, 11 Apr 2015 15:34:00 +0200</pubDate>
-        <link>http://localhost:4000/2015/04/11/how-to-change-the-default-installation-directory-in-windows/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/04/11/how-to-change-the-default-installation-directory-in-windows/</guid>
-        
-        
-        <category>OS</category>
-        
-        <category>registry</category>
-        
-        <category>windows</category>
         
       </item>
     
