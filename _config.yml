@@ -19,7 +19,7 @@ tumblr: thodoris.bais@gmail.com
 discus-identifier: thodorisbais # add your discus identifier
 
 # Tracker
-analytics: # Google Analytics
+analytics: UA-108110726-1
 
 # Build Settings
 markdown: kramdown
