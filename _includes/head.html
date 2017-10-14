@@ -22,4 +22,9 @@
 	<link rel="stylesheet" href="{{ "/assets/fonts/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl }}">
 	<!-- Styles -->
 	<link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+
+	<!-- Track all pages, according to https://desiredpersona.com/google-analytics-jekyll/ -->
+	{% if site.google_analytics and jekyll.environment == 'production' %}
+	{% include analytics.html %}
+	{% endif %}
 </head>
