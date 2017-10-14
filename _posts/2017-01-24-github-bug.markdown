@@ -3,6 +3,7 @@ layout: post
 title:  "GitHub bug"
 date:   2017-01-24 21:00 +0200
 comments: true
+img: software.jpg
 categories: [social]
 ---
 <h1>Situation</h1>

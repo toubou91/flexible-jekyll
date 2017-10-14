@@ -1,25 +1,33 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+title: Hey, hi, Thodoris Bais
+escription: > # this means to ignore newlines until "baseurl:"
+  Born as G(r)eek.
+permalink: ':title/'
+baseurl: "/flexible-jekyll" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-# Site settings
-title: Thodoris Bais around Software and Life
-email: thodoris.bais@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  This is my personal blog and contains several experiences
-  around software and life. I write what I think others will
-  benefit from. You judge whether it helped or not.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://toubou91.github.io" # the base hostname & protocol for your site
-twitter_username: ThodorisBais
-github_username:  toubou91
-excerpt_separator: ""
+# Author Settings
+author: Thodoris Bais
+author-img: thodoris-bais.jpg
+about-author: JUG Leader. Inspired local communities for the next step. Software Engineer. Born as G(r)eek. Growing up in the Netherlands. Speaks three languages. Prefers his own quotes about life. Never fails, always learns. Enjoys good food, not coffee. Goalkeeper.
+twitter: ThodorisBais
+facebook: toubou.techblog
+github: toubou91
+linkedin: thodorisbais
+tumblr: thodoris.bais@gmail.com
 
-permalink:    /:year/:month/:day/:title/ 
-exclude: ["lib", "blog.rb", "Capfile", "config", "log", "Rakefile", "tmp"]  
-destination: public  
-# Build settings
+# Disqus
+discus-identifier: thodorisbais # add your discus identifier
+
+# Tracker
+analytics: # Google Analytics
+
+# Build Settings
 markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 8
+paginate_path: "/page/:num"
+
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]

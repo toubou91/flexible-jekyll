@@ -1,144 +1,115 @@
 <!DOCTYPE html>
-<html>
-
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>JAXB Unmarshalling Example</title>
-  <meta name="description" content="">
-
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/2015/07/05/jaxb-unmarshalling-example/">
-  <link rel="alternate" type="application/rss+xml" title="Thodoris Bais around Software and Life" href="http://localhost:4000/feed.xml">
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>JAXB Unmarshalling Example - Thodoris Bais around Software and Life</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
 </head>
 
-
-  <body>
-
-    <header class="site-header">
+<body>
 
   <div class="wrapper">
-
-    <a class="site-title" href="/">Thodoris Bais around Software and Life</a>
-
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-        
-          
-          <a class="page-link" href="/about/">About</a>
-          
-        
-          
-        
-          
-        
-          
-        
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/" alt=""></a>
       </div>
-    </nav>
-
-  </div>
-
-</header>
-
-
-    <div class="page-content">
-      <div class="wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">JAXB Unmarshalling Example</h1>
-    <p class="post-meta"><time datetime="2015-07-05T17:12:00+02:00" itemprop="datePublished">Jul 5, 2015</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">toubou91</span></span></p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    <div dir="ltr" style="text-align:left;"><div dir="ltr" style="text-align:left;"><div dir="ltr" style="text-align:left;"><h2>1. Introduction</h2><h3>1.1 Apologies</h3>Hey!<br /><br />It's been a loooong time since my last post, so, first of all, let me apologize for this absence<br /><br />The reasons:<br /><ul style="text-align:left;"><li>The tiny OCAJP badge that you see in the right side of the blog (I will refer to this tin a forthcoming post).</li><li>I currently have limited time available.</li></ul><div><h3>1.2 Example's concept</h3></div><div>What we 're gonna see today is how to convert an <a href="http://www.w3schools.com/xml/" target="_blank">XML</a> document to a Java Object. This (and the reverse - Java object to XML transformation) usually occurs when a software deals with <a href="http://docs.oracle.com/javaee/6/tutorial/doc/gijvh.html" target="_blank">Web Services</a>.</div><div><br /></div><h2>2. The Example</h2><div>We 'll here demonstrate how to convert an xml list of objects to a Java object. This can be easier using the <a href="http://www.oracle.com/technetwork/articles/javase/index-140168.html" target="_blank">JAXB Technology</a>. JAXB stands for Java Architecture for XML Binding. It is used to convert XML to Java objects and vice-versa.</div><div><br /></div><div><u>Environment used:</u></div><div><ul style="text-align:left;"><li>JDK 1.7</li><li>Eclipse Luna</li></ul><div><h3><span style="font-size:small;font-weight:normal;">I've the environment that I used, as from JDK versions 1.6 and later, the JAXB dependency is bundled into the JDK, in contrast with previous JDK versions, where you had to at least include the following dependencies onto your classpath: </span><span style="font-size:small;"><span style="font-weight:normal;">“jaxb-api.jar” and “jaxb-impl.jar”.</span></span></h3><div><span style="font-size:small;"><span style="font-weight:normal;">That is, we here don't have to include nothing at all.</span></span><br /><span style="font-size:small;"><span style="font-weight:normal;"><br /></span></span><span style="font-size:small;"><span style="font-weight:normal;"><i>Here is the project structure of this sample, a simple one as you can see, too:</i></span></span><br /><span style="font-size:small;"><span style="font-weight:normal;"><br /></span></span><div class="separator" style="clear:both;text-align:center;"><a href="https://thodorisbais.files.wordpress.com/2015/07/60818-project_structure.png" style="margin-left:1em;margin-right:1em;"><img border="0" src="https://thodorisbais.files.wordpress.com/2015/07/60818-project_structure.png" /></a></div><span style="font-size:small;"><span style="font-weight:normal;"><br /></span></span></div><h3>2.1 The XML file</h3></div></div><div>As I said, we 'll here deal with a smartphones list, so, just for demonstration purposes, two smartphones are here listed:</div><div><br /><code><u>smartphones.xml</u></code><br /><pre class="brush:xml"><br /><br /> <br />  Samsung<br />  Galaxy Ace<br />  2.2<br /> <br /> <br />  Motorola<br />  Moto G 2014<br />  5.0.1<br /> <br /></pre></div><div><br /></div></div><h3>2.2 The Beans</h3>Each smartphone can be described with a DTO class, so here it is:<br /><br /><u style="font-family:monospace;">Smartphone.java</u><br /><pre class="brush:java">package com.toubou91.jaxb.example;<br /><br />import javax.xml.bind.annotation.XmlAccessType;<br />import javax.xml.bind.annotation.XmlAccessorType;<br />import javax.xml.bind.annotation.XmlRootElement;<br /><br />@XmlAccessorType(XmlAccessType.FIELD)<br />@XmlRootElement(name = "smartphone")<br />public class Smartphone {<br /><br /> private String make;<br /> private String model;<br /> private String androidVersion;<br /> <br /> // Getters and setters.<br /> public String getMake() {<br />  return make;<br /> }<br /> public void setMake(String make) {<br />  this.make = make;<br /> }<br /> public String getModel() {<br />  return model;<br /> }<br /> public void setModel(String model) {<br />  this.model = model;<br /> }<br /> public String getAndroidVersion() {<br />  return androidVersion;<br /> }<br /> public void setAndroidVersion(String androidVersion) {<br />  this.androidVersion = androidVersion;<br /> }<br /> <br /> @Override<br /> public String toString() {<br />  return "Smartphone [make: " + getMake() + ", model: " + getModel() + ", android version: "<br />     + getAndroidVersion() + "]" ;<br /> }<br />}<br /></pre></div><br />This is about a bean class containing JAXB annotations, in order to easily handle the properties we want to be traversed from/to XML. According to this When a top level class is annotated with <a href="https://docs.oracle.com/javaee/7/api/javax/xml/bind/annotation/XmlRootElement.html" target="_blank">@XmlRootElement</a> maps a class or an enum type to an XML element (in our case,  the  tag).<br /><br /> <a href="https://docs.oracle.com/javaee/7/api/javax/xml/bind/annotation/XmlAccessorType.html">@XmlAccessorType</a> controls default serialization of fields and properties. That is, it allows us to configure the use of fields or properties to access the data in our domain object (Smartphone object). This is specified as an <code>XmlAccessType</code> (PUBLIC_MEMBER, PROPERTY, FIELD, or NONE) via the  <span style="font-family:monospace;">@XmlAccessorType </span>annotation. We use access type <code>FIELD</code> to cause JAXB implementations to create bindings for fields and annotated properties. So in our case all fields (make, model, androidVersion) are marshalled/unmarshalled by JAXB.<br /><br />The <b>toString() </b>method has to be overrided in order to get a human-readable output format. Otherwise, for each object that will be manipulated, the output will be something like <code>Smartphone@4bbc148</code> .<br /><br />We obviously need a second class that holds a list of <code>Smartphone</code> objects:<br /><br /><u style="font-family:monospace;">Smartphones</u><u style="font-family:monospace;">.java</u><br /><pre class="brush:java">package com.toubou91.jaxb.example;<br /><br />import java.util.ArrayList;<br />import java.util.List;<br /><br />import javax.xml.bind.annotation.XmlAccessType;<br />import javax.xml.bind.annotation.XmlAccessorType;<br />import javax.xml.bind.annotation.XmlElement;<br />import javax.xml.bind.annotation.XmlRootElement;<br /><br />@XmlAccessorType(XmlAccessType.FIELD)<br />@XmlRootElement(name = "smartphones")<br />public class Smartphones {<br /> @XmlElement(name = "smartphone", type = Smartphone.class)<br /> private List smartphones = new ArrayList();<br /> <br /> public Smartphones() {}<br /> <br /> public Smartphones(List smartphones) {<br />  this.smartphones = smartphones;<br /> }<br /> <br /> public void setSmartphones(List smartphones) {<br />  this.smartphones = smartphones;<br /> }<br /> <br /> public List getSmartphones() {<br />  return smartphones;<br /> }<br />}<br /></pre><br /><h3>2.3 The Helper class</h3>Let's create a helper class to easily unmarshalla requested XML file.<br /><div><u style="font-family:monospace;"><br /></u> <u style="font-family:monospace;">JAXBXMLController</u><u style="font-family:monospace;">.java</u></div><pre class="brush:java">package com.toubou91.jaxb.example;<br /><br />import java.io.File;<br />import java.util.List;<br /><br />import javax.xml.bind.JAXBContext;<br />import javax.xml.bind.JAXBException;<br />import javax.xml.bind.Unmarshaller;<br /><br />public class JAXBXMLController {<br /><br /> public static List unmarshal(File file) throws JAXBException {<br />  Smartphones smartphones = new Smartphones();<br />  <br />  JAXBContext jaxbContext = JAXBContext.newInstance(Smartphones.class);<br />   Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();<br />  smartphones = (Smartphones) jaxbUnmarshaller.unmarshal(file);<br />   <br />  return smartphones.getSmartphones();<br />  <br /> }<br />}</pre><h3>2.4 The Demo</h3><div>Finally, let's test what we just created!<br /><u><code><br /></code></u> <u><code>Demo.java</code></u><br /><pre class="brush:java">package com.toubou91.jaxb.example;<br /><br />import java.io.File;<br />import java.util.List;<br /><br />import javax.xml.bind.JAXBException;<br /><br />public class Demo {<br /><br />	public static void main(String[] args) {<br /><br />		List smartphones = null;<br />		<br />		try {<br />			smartphones = JAXBXMLController.unmarshal(new File("src/smartphones.xml"));<br />		} catch (JAXBException e) {<br />			e.printStackTrace();<br />		}<br />		<br />		System.out.println(smartphones);<br />	}<br />}<br /></pre></div><br /><h2>3. Git repo</h2>You can also find the corresponding source code in <a href="https://github.com/toubou91/JAXBSample">this</a> github repo.</div>
-
-  </div>
-
-</article>
-
-<div id="disqus_thread"></div>
-<script>
-
-/**
- *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
- *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
-/*
-var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-	var disqus_url = "http://thodorisbais.com/2015/07/05/jaxb-unmarshalling-example/";
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = '//thodorisbais.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>	
-
-
-      </div>
+      <div class="author-name"></div>
+      <p></p>
     </div>
-
-    <footer class="site-footer">
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">Thodoris Bais around Software and Life</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>Thodoris Bais around Software and Life</li>
-          <li><a href="mailto:thodoris.bais@gmail.com">thodoris.bais@gmail.com</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          
-          <li>
-            <a href="https://github.com/toubou91"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
-</span><span class="username">toubou91</span></a>
-
-          </li>
-          
-
-          
-          <li>
-            <a href="https://twitter.com/ThodorisBais"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
-</span><span class="username">ThodorisBais</span></a>
-
-          </li>
-          
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>This is my personal blog and contains several experiences around software and life. I write what I think others will benefit from. You judge whether it helped or not.
-</p>
-      </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:thodoris.bais@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2017 &copy; </p>
     </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    <div class="page-cover-image">
+      <img class="page-image" src=/assets/img/ alt="JAXB Unmarshalling Example">
+    </div> <!-- End Page Cover Image -->
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">JAXB Unmarshalling Example</h1>
+        <div class="page-date"><span>2015, Jul 05&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <div dir="ltr" style="text-align:left;"><div dir="ltr" style="text-align:left;"><div dir="ltr" style="text-align:left;"><h2>1. Introduction</h2><h3>1.1 Apologies</h3>Hey!<br /><br />It's been a loooong time since my last post, so, first of all, let me apologize for this absence<br /><br />The reasons:<br /><ul style="text-align:left;"><li>The tiny OCAJP badge that you see in the right side of the blog (I will refer to this tin a forthcoming post).</li><li>I currently have limited time available.</li></ul><div><h3>1.2 Example's concept</h3></div><div>What we 're gonna see today is how to convert an <a href="http://www.w3schools.com/xml/" target="_blank">XML</a> document to a Java Object. This (and the reverse - Java object to XML transformation) usually occurs when a software deals with <a href="http://docs.oracle.com/javaee/6/tutorial/doc/gijvh.html" target="_blank">Web Services</a>.</div><div><br /></div><h2>2. The Example</h2><div>We 'll here demonstrate how to convert an xml list of objects to a Java object. This can be easier using the <a href="http://www.oracle.com/technetwork/articles/javase/index-140168.html" target="_blank">JAXB Technology</a>. JAXB stands for Java Architecture for XML Binding. It is used to convert XML to Java objects and vice-versa.</div><div><br /></div><div><u>Environment used:</u></div><div><ul style="text-align:left;"><li>JDK 1.7</li><li>Eclipse Luna</li></ul><div><h3><span style="font-size:small;font-weight:normal;">I've the environment that I used, as from JDK versions 1.6 and later, the JAXB dependency is bundled into the JDK, in contrast with previous JDK versions, where you had to at least include the following dependencies onto your classpath: </span><span style="font-size:small;"><span style="font-weight:normal;">“jaxb-api.jar” and “jaxb-impl.jar”.</span></span></h3><div><span style="font-size:small;"><span style="font-weight:normal;">That is, we here don't have to include nothing at all.</span></span><br /><span style="font-size:small;"><span style="font-weight:normal;"><br /></span></span><span style="font-size:small;"><span style="font-weight:normal;"><i>Here is the project structure of this sample, a simple one as you can see, too:</i></span></span><br /><span style="font-size:small;"><span style="font-weight:normal;"><br /></span></span><div class="separator" style="clear:both;text-align:center;"><a href="https://thodorisbais.files.wordpress.com/2015/07/60818-project_structure.png" style="margin-left:1em;margin-right:1em;"><img border="0" src="https://thodorisbais.files.wordpress.com/2015/07/60818-project_structure.png" /></a></div><span style="font-size:small;"><span style="font-weight:normal;"><br /></span></span></div><h3>2.1 The XML file</h3></div></div><div>As I said, we 'll here deal with a smartphones list, so, just for demonstration purposes, two smartphones are here listed:</div><div><br /><code><u>smartphones.xml</u></code><br /><pre class="brush:xml"><br /><br /> <br />  Samsung<br />  Galaxy Ace<br />  2.2<br /> <br /> <br />  Motorola<br />  Moto G 2014<br />  5.0.1<br /> <br /></pre></div><div><br /></div></div><h3>2.2 The Beans</h3>Each smartphone can be described with a DTO class, so here it is:<br /><br /><u style="font-family:monospace;">Smartphone.java</u><br /><pre class="brush:java">package com.toubou91.jaxb.example;<br /><br />import javax.xml.bind.annotation.XmlAccessType;<br />import javax.xml.bind.annotation.XmlAccessorType;<br />import javax.xml.bind.annotation.XmlRootElement;<br /><br />@XmlAccessorType(XmlAccessType.FIELD)<br />@XmlRootElement(name = "smartphone")<br />public class Smartphone {<br /><br /> private String make;<br /> private String model;<br /> private String androidVersion;<br /> <br /> // Getters and setters.<br /> public String getMake() {<br />  return make;<br /> }<br /> public void setMake(String make) {<br />  this.make = make;<br /> }<br /> public String getModel() {<br />  return model;<br /> }<br /> public void setModel(String model) {<br />  this.model = model;<br /> }<br /> public String getAndroidVersion() {<br />  return androidVersion;<br /> }<br /> public void setAndroidVersion(String androidVersion) {<br />  this.androidVersion = androidVersion;<br /> }<br /> <br /> @Override<br /> public String toString() {<br />  return "Smartphone [make: " + getMake() + ", model: " + getModel() + ", android version: "<br />     + getAndroidVersion() + "]" ;<br /> }<br />}<br /></pre></div><br />This is about a bean class containing JAXB annotations, in order to easily handle the properties we want to be traversed from/to XML. According to this When a top level class is annotated with <a href="https://docs.oracle.com/javaee/7/api/javax/xml/bind/annotation/XmlRootElement.html" target="_blank">@XmlRootElement</a> maps a class or an enum type to an XML element (in our case,  the  tag).<br /><br /> <a href="https://docs.oracle.com/javaee/7/api/javax/xml/bind/annotation/XmlAccessorType.html">@XmlAccessorType</a> controls default serialization of fields and properties. That is, it allows us to configure the use of fields or properties to access the data in our domain object (Smartphone object). This is specified as an <code>XmlAccessType</code> (PUBLIC_MEMBER, PROPERTY, FIELD, or NONE) via the  <span style="font-family:monospace;">@XmlAccessorType </span>annotation. We use access type <code>FIELD</code> to cause JAXB implementations to create bindings for fields and annotated properties. So in our case all fields (make, model, androidVersion) are marshalled/unmarshalled by JAXB.<br /><br />The <b>toString() </b>method has to be overrided in order to get a human-readable output format. Otherwise, for each object that will be manipulated, the output will be something like <code>Smartphone@4bbc148</code> .<br /><br />We obviously need a second class that holds a list of <code>Smartphone</code> objects:<br /><br /><u style="font-family:monospace;">Smartphones</u><u style="font-family:monospace;">.java</u><br /><pre class="brush:java">package com.toubou91.jaxb.example;<br /><br />import java.util.ArrayList;<br />import java.util.List;<br /><br />import javax.xml.bind.annotation.XmlAccessType;<br />import javax.xml.bind.annotation.XmlAccessorType;<br />import javax.xml.bind.annotation.XmlElement;<br />import javax.xml.bind.annotation.XmlRootElement;<br /><br />@XmlAccessorType(XmlAccessType.FIELD)<br />@XmlRootElement(name = "smartphones")<br />public class Smartphones {<br /> @XmlElement(name = "smartphone", type = Smartphone.class)<br /> private List smartphones = new ArrayList();<br /> <br /> public Smartphones() {}<br /> <br /> public Smartphones(List smartphones) {<br />  this.smartphones = smartphones;<br /> }<br /> <br /> public void setSmartphones(List smartphones) {<br />  this.smartphones = smartphones;<br /> }<br /> <br /> public List getSmartphones() {<br />  return smartphones;<br /> }<br />}<br /></pre><br /><h3>2.3 The Helper class</h3>Let's create a helper class to easily unmarshalla requested XML file.<br /><div><u style="font-family:monospace;"><br /></u> <u style="font-family:monospace;">JAXBXMLController</u><u style="font-family:monospace;">.java</u></div><pre class="brush:java">package com.toubou91.jaxb.example;<br /><br />import java.io.File;<br />import java.util.List;<br /><br />import javax.xml.bind.JAXBContext;<br />import javax.xml.bind.JAXBException;<br />import javax.xml.bind.Unmarshaller;<br /><br />public class JAXBXMLController {<br /><br /> public static List unmarshal(File file) throws JAXBException {<br />  Smartphones smartphones = new Smartphones();<br />  <br />  JAXBContext jaxbContext = JAXBContext.newInstance(Smartphones.class);<br />   Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();<br />  smartphones = (Smartphones) jaxbUnmarshaller.unmarshal(file);<br />   <br />  return smartphones.getSmartphones();<br />  <br /> }<br />}</pre><h3>2.4 The Demo</h3><div>Finally, let's test what we just created!<br /><u><code><br /></code></u> <u><code>Demo.java</code></u><br /><pre class="brush:java">package com.toubou91.jaxb.example;<br /><br />import java.io.File;<br />import java.util.List;<br /><br />import javax.xml.bind.JAXBException;<br /><br />public class Demo {<br /><br />	public static void main(String[] args) {<br /><br />		List smartphones = null;<br />		<br />		try {<br />			smartphones = JAXBXMLController.unmarshal(new File("src/smartphones.xml"));<br />		} catch (JAXBException e) {<br />			e.printStackTrace();<br />		}<br />		<br />		System.out.println(smartphones);<br />	}<br />}<br /></pre></div><br /><h2>3. Git repo</h2>You can also find the corresponding source code in <a href="https://github.com/toubou91/JAXBSample">this</a> github repo.</div>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=JAXB Unmarshalling Example&url=http://localhost:4000/2015/07/05/jaxb-unmarshalling-example/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2015/07/05/jaxb-unmarshalling-example/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2015/07/05/jaxb-unmarshalling-example/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
 
   </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
 
-</footer>
-
-
-  </body>
-
+</body>
 </html>
