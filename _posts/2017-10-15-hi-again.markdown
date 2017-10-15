@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "Hi again"
+date:   2017-10-15 01:28 +0200
+comments: true
+img: software.jpg
+tags: [thoughts]
+---
+### Intro
+
+Well, it's been a really crazy period and I'm not referring to anything else other than my thoughts regarding my blog.
+From Blogger to WP to Jekyll to WP to Blogger to...finally Jekyll again, it's been a long journey.
+
+### From Jekyll to WP
+Actually I was pretty fine at the point when I very first migrated to Jekyll, but then, the theme I was using wasn't such of a fit for me. Write a new one from scratch? No, unfortunately I didn't (and I don't) have the time capacity to learn something like this right now.
+So, roll back to WP, which provided me everything out of the box!
+
+### To Blogger
+But, again, the free version of WP (the <em>dot com</em> one) does not allow visitors to comment on your posts, unless they have a WP account.
+So, back to Blogger again, since I was still seeing traffic on that one, even with a redirection to WP already in place.
+
+### To Hope
+But, I wasn't receiving as much traffic as I initially anticipated I did and on the other hand, Blogger is quite dirty to deal with. I was searching for something I could benefit from; hopefully, this time, it worked! [flexible-jekyll](https://github.com/artemsheludko/flexible-jekyll) came to the rescue:
+
+- simplistic
+- contains what I want (including analytics, which was one of the reasons that I did the come-back to Blogger, actually), out of the box
+- UI fits my needs and views (, although I'm not the expert to judge about front-end stuff)
+- I played with it for only 30' and I learned much more than I did after 1 month of the theme I used on my first time (you see? I'm nt even inclined to search for its name anymore :-P ) ; ok, maybe it's also that I now know better how to find my way around it
+
+<em>Here, one might argue about the fore-mentioned-analytics-part, since it shouldn't be that of a big deal to configure analytics myself, but as I said, having had no prior exposure to such things and having had failures trying to configure it in my past jekyll installation, it proved to work like a charm this time, since I didn't only understand, but I also read about the concept.</em>
+
+Hopefully, there will be no more changes, "provider-wise".
+
+#### Quote from [Slogan](https://www.youtube.com/watch?v=fW6em2eNLQ4)
+> Δεν είναι κακό να αλλάζει κάποιος. Σηματοδοτεί ότι βελτιώνεσαι, αναθεωρείς και εξελίσσεσαι. Βλέπεις αλλιώς τα πράγματα.
+
+
+
+
