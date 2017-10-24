@@ -4,6 +4,7 @@ title:  "The best way to implement a Singleton"
 date:   2017-09-27 22:40 +0200
 comments: true
 tags: [design-patterns, java]
+img: java-logo.jpg
 ---
 OWH. MY. GOD.
 
