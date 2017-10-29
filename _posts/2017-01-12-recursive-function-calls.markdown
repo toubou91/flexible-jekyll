@@ -4,6 +4,7 @@ title:  "How to call a JavaScript function recursively"
 date:   2017-01-12 21:00 +0200
 comments: true
 categories: [til, javascript]
+img: js-1.png
 ---
 <h1>Situation</h1>
 So I have developed [math.js](https://www.npmjs.com/package/math.js), a small npm-package (still WIP), which contains very simple functions, in a format like below:
