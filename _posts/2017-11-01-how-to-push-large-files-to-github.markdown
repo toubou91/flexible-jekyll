@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to push large files to GitHub"
-date:   2017-10-19 22:40 +0200
+date:   2017-11-01 00:40 +0200
 comments: true
 tags: [how-to, github]
 img: git-logo.png
