@@ -116,6 +116,16 @@ public static void main(String[] args) {
 }
 ```
 
+The above will print the following:
+
+```
+Calling next() method...
+100
+Calling next() method...
+4
+Calling next() method...
+333
+```
 ### 5. TIL
 Apparently, there shouldn't be a "Today I Learned" section in a blog post, since it is obvious that in order to write something up, you either learned it for the first or [the second time](https://twitter.com/ThodorisBais/status/950213240340000768).
 Here is what I learned today, regarding operators.
