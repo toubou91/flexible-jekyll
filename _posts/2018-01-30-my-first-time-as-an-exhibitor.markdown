@@ -3,7 +3,7 @@ layout: post
 title:  "My first time as an exhibitor"
 date:   2018-01-30 20:00 +0200
 comments: true
-tags: [java, jvm, event, conference, social]
+tags: [java, jvm, event, conference, social, jug, utrechtjug]
 img: 30-01-18/JVMCON.jpg
 ---
 
