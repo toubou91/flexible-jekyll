@@ -1,9 +1,9 @@
 title: Thodoris Bais around Software Engineering
-escription: > # this means to ignore newlines until "baseurl:"
+description: > # this means to ignore newlines until "baseurl:"
   Born as G(r)eek.
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://thodorisbais.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: "ThodorisBais"
 
 # Author Settings
