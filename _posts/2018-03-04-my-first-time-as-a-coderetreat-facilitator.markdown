@@ -130,6 +130,7 @@ And of course, our job's headache:
 - Most of the participants came prepared, they knew the problem upfront
 
 ### References
+- [No talking session footage](https://www.youtube.com/watch?v=p-g9QiGtt4s)
 - [A review on the event itself from Piet Souris, one of the attendees](https://coderanch.com/t/687011/books/Global-Day-Code-Retreat-Day#3226936)
 - [VLOG #7 - GDCR17 & Utrecht JUG Banner!](https://www.youtube.com/watch?v=_S9qe6eT-0M)
 - [Meetup event](https://www.meetup.com/Utrecht-Java-User-Group/events/243847568/)
