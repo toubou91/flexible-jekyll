@@ -53,6 +53,8 @@ In such questions you have to explain that not all the participants know what a 
 - Team had to adjust
 - Discussion about clients
 
+![first]({{site.baseurl}}/assets/img/2017/gdcr17-utrecht.jpeg)
+
 #### 2.3 No Talking
 
 ###### 2.3.1 Short Notes
