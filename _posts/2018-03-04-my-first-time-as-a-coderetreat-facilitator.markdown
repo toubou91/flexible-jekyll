@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to checkout (on a forked repo) a Pull Request coming from the main repo?"
+title:  "My first time as a Coderetreat Facilitator"
 date:   2018-03-04 10:00 +0200
 comments: true
 tags: [git, pull-request]
