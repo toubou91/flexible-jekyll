@@ -8,7 +8,7 @@ img: coderetreat.png
 ---
 
 ### 1. Introduction
-November 2017 I facilitated the [Global Day of Coderetreat 2017](https://www.youtube.com/watch?v=Mp34vCVlSVs) in Utrecht, Netherlands. In the past, I have already attended one [coderetreat in Thessaloniki](https://thodorisbais.github.io/the-first-global-day-of-coderetreat-in-thessaloniki/), Greece, but it was quite different to experience it from the facilitator's perspective. As it was my very first time facilitating such an event, I wanted to keep the amount of people really low (20) and also recruited two co-facilitators, Joost and Patrick. Let's see my notes during the day, while observing who teams were working on each different session.
+November 2017 I facilitated the [Global Day of Coderetreat 2017](https://www.youtube.com/watch?v=Mp34vCVlSVs) in Utrecht, Netherlands. In the past, I have already attended one [coderetreat in Thessaloniki](https://thodorisbais.github.io/the-first-global-day-of-coderetreat-in-thessaloniki/), Greece, but it was quite different to experience it from the facilitator's perspective. As it was my very first time facilitating such an event, I wanted to keep the amount of people really low (20) and also recruited two co-facilitators, Joost and Patrick. Let's see my notes during the day, while observing how teams were working on each different session.
 
 Disclaimers:
 - The notes are not opinionated, I just tried describing what I was observing
@@ -27,7 +27,7 @@ In such questions you have to explain that not all the participants know what a 
 
 ###### 2.2.2 Retro
 - There were arguments regarding the best solution
-- One person said "I believe y partner would have given a completely different approach if he was the one who wrote the code"
+- One person said "I believe my partner would have given a completely different approach if he was the one who wrote the code"
 
 #### 2.2 String Ping-Pong
 
@@ -40,7 +40,7 @@ In such questions you have to explain that not all the participants know what a 
   Me: Cool, so, it started well! <br/>
   Participant: Well, not fast, but I think we got the idea
 
-- A person who was talking about the Scrum methodology during the first session, in the middle of the second session asked confirmation for a specific rule of the game. After a while he started arguing again with his partner regarding Scrum; his partner got a bit pissed off, but they managed to continue. The person who argued was the same person who asked me the question in the introduction.
+- A person who was talking about the Scrum methodology during the first session, in the middle of the second session asked confirmation for a specific rule of the game. After a while he started arguing again with his partner regarding Scrum; his partner got a bit pissed off, but they managed to continue. The person who argued was the same person who asked me the question during the introduction part.
 - The Team which decided to go for Scala finally split, because as one of the members mentioned:
 
 > We couldn't even get the very basic setup done, so, we split.
@@ -92,8 +92,8 @@ In such questions you have to explain that not all the participants know what a 
 ###### 2.4.2 Retro
 - Our goal today is not to solve the problem
 - Have a clear path of dealing with a problem; structured in many commits and visible in the commit message log
-- Minimize time wasted on trying an approach. Short commits instead of hours spent
-- Understand that a big problem can be split in smaller simple ones
+- Minimize time wasted on trying an approach. Short commits instead of spending hours
+- Understand that a big problem can be split into smaller ones
 
 ### 3. Overall Retro
 This is a quote from a participant that made me really happy:
@@ -111,14 +111,13 @@ One that myself always believes is a first priority in our job:
 #### 3.1 What did you learn today
 In this question I got the following answers
 
-Something I really expected:
 - TDD
 - Naming conventions
 - Communication
 - It's difficult to delete your code after each session
 
 #### 3.2 What are the 3 take-aways for you today?
-Again, the one below caught my attention:
+This one caught my attention:
 
 > _Remote pair programming might work the way TDD is done_
 
@@ -126,7 +125,7 @@ And of course, our job's headache:
 
 > _How difficult it is to cope with tests_
 
-#### General Points from my side
+#### General remarks from my side
 - Most of the participants came prepared, they knew the problem upfront
 
 ### References
@@ -140,7 +139,7 @@ And of course, our job's headache:
 I'm pretty sure you made clear how much I enjoyed this event.
 
 
-What are your thoughts about it? About a Coderetreat you have attended? About the different kind of personalities one might meet in their orking environment? About how much the setup of an environment can help or not in the way people feel about the da to day work?
+What are your thoughts about it? About a Coderetreat you have attended? About the different kind of personalities one might meet in their working environment? About how much the setup of an environment can help or not in the way people feel about their day to day work?
 
 
 Let me know in the comments!
